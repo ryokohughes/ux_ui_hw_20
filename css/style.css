@@ -208,7 +208,7 @@ CONTENT
 .skill-list {columns: 2;}
 
 .btn-right {
-	margin: 10px 0 40px;
+	margin: 15px 0 40px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
