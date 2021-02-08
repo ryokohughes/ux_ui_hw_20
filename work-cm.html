@@ -18,7 +18,10 @@
     <!-- Header -->
     <header class="wow fadeIn" data-wow-delay=".5s">
         <div class="container">
-            <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+            <div class="header-item">
+                <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+                <button class="mobile-nav-btn"><img src="images/icon-list.png" alt="Mobile Nav"></button>
+            </div>
             <nav>
                 <!-- <p class="mobile-nav"></p> -->
                 <ul class="header-nav">
@@ -36,8 +39,12 @@
     <!-- Title -->
     <section class="title">
         <div class="container bottom-border">
-            <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">Cooking Matters</h2>
-            <p class="page-sub-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Re-design project of NPO website “Cooking Matters”. We focused on recipes and educational tools.</p>
+            <section class="row">
+                <div class="col-md-10 offset-md-1">
+                  <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">Cooking Matters</h2>
+                  <p class="page-sub-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Re-design project of NPO website “Cooking Matters”. We focused on recipes and educational tools.</p>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -45,7 +52,7 @@
     <main class="content">
         <div class="container">
             <section class="row bottom-border">
-                <div class="col col-6 port-overview">
+                <div class="col-lg-6 port-overview">
                     <h5>Overview</h5>
                     <dl>
                         <dt>Team:</dt>
@@ -56,7 +63,7 @@
                         <dd>Our users need to find resources for efficient and economical recipes with relevant nutritional information to meet their needs.</dd>
                     </dl>
                 </div>
-                <div class="col col-6 port-thumb-img">
+                <div class="col-lg-6 port-thumb-img">
                     <div class="thumb-bg cm">
                         <img src="images/thumb-npo.png" alt="Cooking Matters" class="port-image">
                     </div>
@@ -65,13 +72,13 @@
 
             <h3>Definition &amp; Ideation</h3>
             <section class="row bottom-border">
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/npo-storyboard.jpg" data-type="image" data-fslightbox>
                         <img src="images/npo-storyboard.jpg" alt="Storyboard" class="port-image">
                     </a>
                     <h5>Storyboard</h5>
                 </div>
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/npo-paper-wire.jpg" data-type="image" data-fslightbox>
                         <img src="images/npo-paper-wire.jpg" alt="Paper Wireframes" class="port-image">
                     </a>
@@ -81,14 +88,14 @@
 
             <h3>Desktop Wireframes</h3>
             <section class="row bottom-border">
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/npo-desktop-wire01.png" data-type="image" data-fslightbox>
                         <img src="images/npo-desktop-wire01.png" alt="Homepage Wireframes" class="port-image">
                     </a>
                     <h5>Homepage</h5>
 
                 </div>
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/npo-desktop-wire02.png" data-type="image" data-fslightbox>
                        <img src="images/npo-desktop-wire02.png" alt="Recipe Wireframes" class="port-image">
                     </a>
@@ -98,7 +105,7 @@
 
             <h3>High Fidelity Comps</h3>
             <section class="row">
-                <div class="col col-12 port-item">
+                <div class="col-sm-12 port-item">
                     <a href="images/npo-desktop-comps.jpg" data-type="image" data-fslightbox>
                        <img src="images/npo-desktop-comps.jpg" alt="Paper Wireframes" class="port-image">
                     </a>
@@ -130,6 +137,25 @@
           }
         );
         wow.init();
+      </script>
+      <script>
+        let msg = 'I\'m adding a nice Java Script';
+        console.log(msg);
+
+        let navbar = document.querySelector(".header-nav")
+        let ham = document.querySelector(".mobile-nav-btn")
+        ham.addEventListener("click", toggleHamburger)
+
+        function toggleHamburger(){
+            navbar.classList.toggle("show")
+            ham.classList.toggle("active")
+        }
+        let menuLinks = document.querySelectorAll(".header-nav li")
+        menuLinks.forEach( 
+            function(menuLink) { 
+                menuLink.addEventListener("click", toggleHamburger) 
+            }
+        )
       </script>
 </body>
 </html>

@@ -18,9 +18,11 @@
     <!-- Header -->
     <header class="wow fadeIn" data-wow-delay=".5s">
         <div class="container">
-            <h1 id="header-logo"><a href="index.html">Ryoko Hughes </a></h1>
+            <div class="header-item">
+                <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+                <button class="mobile-nav-btn"><img src="images/icon-list.png" alt="Mobile Nav"></button>
+            </div>
             <nav>
-                <!-- <p class="mobile-nav"></p> -->
                 <ul class="header-nav">
                     <li><a href="index.html" title="Home">Home</a></li>
                     <li class="current"><a href="about.html" title="About">About</a></li>
@@ -36,7 +38,11 @@
     <!-- Content -->
     <section class="title">
         <div class="container bottom-border">
-            <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">About</h2>
+            <section class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">About</h2>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -44,12 +50,12 @@
     <main class="content">
         <div class="container">
             <section class="row bottom-border">
-                <div class="col col-6 port-overview">
+                <div class="col-md-6 port-overview">
                     <h5>Hello, I am Ryoko Hughes!</h5>
                     <p>I am a UX/UI Designer & Front-End Developer with many years of industry experience, from small agencies to large enterprises delivering various projects. </p>
                     <p>I design and build pixel perfect websites, products and design systems. I love providing solutions to various problems.</p>
                 </div>
-                <div class="col col-6 port-thumb-img">
+                <div class="col-md-6 port-thumb-img">
                     <div class="thumb-bg seal-portrait">
                         <img src="images/seal-self.png" alt="Seal" class="port-image">
                     </div>
@@ -58,7 +64,7 @@
 
             <h3>My UX skills</h3>
             <section class="row bottom-border">
-                <div class="col col-6">
+                <div class="col-md-6">
                     <h5>User Research</h5>
                     <p>During our team project, I did a lot of Heuristic Evaluation and Annotation. I like to analyze their current website, and competitors.</p>
                     <h5>User Empathy</h5>
@@ -66,7 +72,7 @@
                     <h5>Qualitative Interviews</h5>
                     <p>Interview questions can be repetitive. I tried to ask additional questions to get more insight.</p>
                 </div>
-                <div class="col col-6">
+                <div class="col-md-6">
                     <h5>Tools I use</h5>
                     <ul class="skill-list">
                         <li>Adobe XD</li>
@@ -97,6 +103,25 @@
           }
         );
         wow.init();
+      </script>
+      <script>
+        let msg = 'I\'m adding a nice Java Script';
+        console.log(msg);
+
+        let navbar = document.querySelector(".header-nav")
+        let ham = document.querySelector(".mobile-nav-btn")
+        ham.addEventListener("click", toggleHamburger)
+
+        function toggleHamburger(){
+            navbar.classList.toggle("show")
+            ham.classList.toggle("active")
+        }
+        let menuLinks = document.querySelectorAll(".header-nav li")
+        menuLinks.forEach( 
+            function(menuLink) { 
+                menuLink.addEventListener("click", toggleHamburger) 
+            }
+        )
       </script>
 </body>
 </html>

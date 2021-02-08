@@ -18,9 +18,11 @@
     <!-- Header -->
     <header class="wow fadeIn" data-wow-delay=".5s">
         <div class="container">
-            <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+            <div class="header-item">
+                <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+                <button class="mobile-nav-btn"><img src="images/icon-list.png" alt="Mobile Nav"></button>
+            </div>
             <nav>
-                <!-- <p class="mobile-nav"></p> -->
                 <ul class="header-nav">
                     <li class="current"><a href="index.html" title="Home">Home</a></li>
                     <li><a href="about.html" title="About">About</a></li>
@@ -34,9 +36,13 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
-        <img src="images/logo.png" alt="Seal" class="hero-logo wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">
-        <h2 class="tagline wow fadeInUp" data-wow-delay=".5s">Hello, I am Ryoko Hughes! I am a <strong>UX/UI Designer</strong> & <strong>Front-End Developer</strong> with many years of industry experience, from small agencies to large enterprises delivering various projects.</h2>
+    <section class="hero container">
+        <section class="row">
+            <div class="col-md-8 offset-md-2">
+              <img src="images/logo.png" alt="Seal" class="hero-logo wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">
+               <h2 class="tagline wow fadeInUp" data-wow-delay=".5s">Hello, I am Ryoko Hughes! I am a <strong>UX/UI Designer</strong> & <strong>Front-End Developer</strong> with many years of industry experience, from small agencies to large enterprises delivering various projects.</h2>
+            </div>
+        </section>
     </section>
 
     <!-- Content -->
@@ -91,6 +97,23 @@
       <script>
         let msg = 'I\'m adding a nice Java Script';
         console.log(msg);
+
+        let navbar = document.querySelector(".header-nav")
+        let ham = document.querySelector(".mobile-nav-btn")
+        ham.addEventListener("click", toggleHamburger)
+
+        function toggleHamburger(){
+            navbar.classList.toggle("show")
+            ham.classList.toggle("active")
+        }
+        let menuLinks = document.querySelectorAll(".header-nav li")
+        menuLinks.forEach( 
+            function(menuLink) { 
+                menuLink.addEventListener("click", toggleHamburger) 
+            }
+        )
       </script>
 </body>
 </html>
+
+

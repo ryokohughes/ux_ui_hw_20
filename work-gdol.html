@@ -18,7 +18,10 @@
     <!-- Header -->
     <header class="wow fadeIn" data-wow-delay=".5s">
         <div class="container">
-            <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+            <div class="header-item">
+                <h1 id="header-logo"><a href="index.html">Ryoko Hughes</a></h1>
+                <button class="mobile-nav-btn"><img src="images/icon-list.png" alt="Mobile Nav"></button>
+            </div>
             <nav>
                 <!-- <p class="mobile-nav"></p> -->
                 <ul class="header-nav">
@@ -36,8 +39,12 @@
     <!-- Title -->
     <section class="title">
         <div class="container bottom-border">
-            <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">GDOL</h2>
-            <p class="page-sub-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Re-design project of Georgia Dept of Labor website. I designed low-fi and high-fi wireframes.</p>
+            <section class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h2 class="page-title wow fadeInDown" data-wow-duration="1s" data-wow-delay=".25s">GDOL</h2>
+                    <p class="page-sub-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Re-design project of Georgia Dept of Labor website. I designed low-fi and high-fi wireframes.</p>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -45,7 +52,7 @@
     <main class="content">
         <div class="container">
             <section class="row bottom-border">
-                <div class="col col-6 port-overview">
+                <div class="col-lg-6 port-overview">
                     <h5>Overview</h5>
                     <dl>
                         <dt>My Role:</dt>
@@ -56,7 +63,7 @@
                         <dd>We’re going to redesign website and re-organize content.</dd>
                     </dl>
                 </div>
-                <div class="col col-6 port-thumb-img">
+                <div class="col-lg-6 port-thumb-img">
                     <div class="thumb-bg gdol">
                         <img src="images/thumb-gdol.png" alt="GDOL" class="port-image">
                     </div>
@@ -65,19 +72,19 @@
 
             <h3>User Interface Analysis</h3>
             <section class="row bottom-border">
-                <div class="col col-4 port-item">
+                <div class="col-md-4 port-item">
                     <a href="images/gdol-proto-persona.png" data-type="image" data-fslightbox>
                         <img src="images/gdol-proto-persona.png" alt="Proto-persona" class="port-image">
                     </a>
                     <h5>Proto-persona</h5>
                 </div>
-                <div class="col col-4 port-item">
+                <div class="col-md-4 port-item">
                     <a href="images/gdol-annotations.png" data-type="image" data-fslightbox>
                         <img src="images/gdol-annotations.png" alt="Annotations" class="port-image">
                     </a>
                     <h5>Annotations</h5>
                 </div>
-                <div class="col col-4 port-item">
+                <div class="col-md-4 port-item">
                     <a href="images/gdol-moodboard.png" data-type="image" data-fslightbox>
                        <img src="images/gdol-moodboard.png" alt="Moodboard" class="port-image">
                     </a>
@@ -87,13 +94,13 @@
 
             <h3>UI Design & Navigation</h3>
             <section class="row bottom-border">
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/gdol-sitemap.png" data-type="image" data-fslightbox>
                        <img src="images/gdol-sitemap.png" alt="Sitemap" class="port-image">
                     </a>
                     <h5>Sitemap</h5>
                 </div>
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/gdol-style.png" data-type="image" data-fslightbox>
                         <img src="images/gdol-style.png" alt="UI style tile" class="port-image">
                     </a>
@@ -103,13 +110,13 @@
 
             <h3>Wireframes</h3>
             <section class="row bottom-border">
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/gdol-wire-desktop.png" data-type="image" data-fslightbox>
                         <img src="images/gdol-wire-desktop.png" alt="Desktop Wireframes" class="port-image">
                     </a>
                     <h5>Desktop Wireframes</h5>
                 </div>
-                <div class="col col-6 port-item">
+                <div class="col-md-6 port-item">
                     <a href="images/gdol-wire-mobile.png" data-type="image" data-fslightbox>
                         <img src="images/gdol-wire-mobile.png" alt="Mobile Wireframes" class="port-image">
                     </a>
@@ -119,7 +126,7 @@
 
             <h3>High-fidelity Design</h3>
             <section class="row">
-                <div class="col col-12 port-item">
+                <div class="col-sm-12 port-item">
                     <a href="images/gdol-comp-desktop.jpg" data-type="image" data-fslightbox>
                        <img src="images/gdol-comp-desktop.jpg" alt="Desktop" class="port-image">
                     </a>
@@ -164,6 +171,25 @@
           }
         );
         wow.init();
+      </script>
+      <script>
+        let msg = 'I\'m adding a nice Java Script';
+        console.log(msg);
+
+        let navbar = document.querySelector(".header-nav")
+        let ham = document.querySelector(".mobile-nav-btn")
+        ham.addEventListener("click", toggleHamburger)
+
+        function toggleHamburger(){
+            navbar.classList.toggle("show")
+            ham.classList.toggle("active")
+        }
+        let menuLinks = document.querySelectorAll(".header-nav li")
+        menuLinks.forEach( 
+            function(menuLink) { 
+                menuLink.addEventListener("click", toggleHamburger) 
+            }
+        )
       </script>
 </body>
 </html>
